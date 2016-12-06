@@ -2,7 +2,7 @@
 unset GIT_DIR
 # git submodule update --init --recursive >/dev/null
 git clone https://github.com/kylef/swiftenv
-mv -r swiftenv $ROOT_DIR
+mv swiftenv $ROOT_DIR
 
 # Activate swiftenv
 export SWIFTENV_ROOT="$CACHE_DIR/swiftenv"
