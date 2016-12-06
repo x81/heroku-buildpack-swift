@@ -27,6 +27,7 @@ mkdir -p "$CACHE_DIR"
 echo "------> source utils"
 source "$BIN_DIR/utils"
 echo "------> source swiftenv"
+pwd
 source "$BIN_DIR/steps/swiftenv"
 echo "------> source swift"
 source "$BIN_DIR/steps/swift"
