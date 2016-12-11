@@ -3,8 +3,7 @@
 
 set -e
 set -o pipefail
-echo "------>pwd"
-ls
+
 BIN_DIR=$(cd $(dirname $0); pwd)
 ROOT_DIR=$(dirname $BIN_DIR)
 
@@ -25,20 +24,12 @@ if [ -f "$ENV_DIR/SWIFT_BUILD_FLAGS" ]; then
 fi
 
 mkdir -p "$CACHE_DIR"
-echo "------> source utils"
 source "$BIN_DIR/utils"
-echo "------> source swiftenv"
-pwd
 source "$BIN_DIR/steps/swiftenv"
-echo "------> source swift"
 source "$BIN_DIR/steps/swift"
-echo "------> source clang"
 source "$BIN_DIR/steps/clang"
-echo "------> source pre_compile"
 source "$BIN_DIR/steps/hooks/pre_compile"
-echo "------> source swift-build"
 source "$BIN_DIR/steps/swift-build"
-echo "------> source swift-install"
 source "$BIN_DIR/steps/swift-install"
 
 # Setup application environment
